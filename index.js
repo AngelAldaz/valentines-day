@@ -7,17 +7,25 @@ const envelopeUnder = document.querySelector(".under");
 const envelopeButton = document.querySelector("#open-button-envelope");
 const imagesContainer = document.querySelector(".images-container");
 const successContainer = document.querySelector(".success");
+const musica = document.getElementById("musica");
+const error = document.getElementById("error");
+const completed = document.getElementById("completed");
+musica.volume = 0.2;
+error.volume = 0.7;
+completed.volume = 0.7;
 
 let contador = 1;
 
 noButton.addEventListener("click", () => {
   const modalContainer = document.querySelector(`#modal-${contador}`);
   modalContainer.style.display = "flex";
+  error.play();
 });
 
 yesButton.addEventListener("click", () => {
   card.style.display = "none";
   successContainer.style.display = "flex";
+  completed.play();
   setTimeout(() => {
     document.querySelector(".tickets.left").classList.add("show");
     document.querySelector(".tickets.right").classList.add("show");
@@ -43,10 +51,11 @@ const openEnvelope = () => {
   envelopeFlap.classList.remove("close");
   envelopeFlap.classList.add("open");
   envelopeButton.style.display = "none";
+  musica.play();
 
   setTimeout(() => {
     envelope.style.display = "none";
     envelopeButton.style.display = "none";
     card.style.display = "flex";
-  }, 500);
+  }, 1000);
 };
