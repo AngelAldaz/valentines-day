@@ -48,5 +48,5 @@ const openEnvelope = () => {
     envelope.style.display = "none";
     envelopeButton.style.display = "none";
     card.style.display = "flex";
-  }, 1500);
+  }, 500);
 };
