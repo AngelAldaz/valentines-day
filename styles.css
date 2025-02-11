@@ -37,7 +37,7 @@ body {
 .card-container {
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 60vh;
   width: 85vw;
@@ -45,8 +45,7 @@ body {
   background-color: var(--rosa-chicle);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 4px;
-  gap: 20px;
+  padding: 50px 10px;
 }
 
 .card-container h1 {
