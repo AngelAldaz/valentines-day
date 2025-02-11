@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vantine's Propose</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/love-letter.png"
+    />
+  </head>
+  <body>
+    <!-- Sobre -->
+    <div class="envelope">
+      <div class="flap close upper"></div>
+      <div class="flap close under"></div>
+      <div class="body"></div>
+    </div>
+    <button
+      id="open-button-envelope"
+      class="option-button"
+      onclick="openEnvelope()"
+    >
+      Abrir
+    </button>
+
+    <!-- Carta principal -->
+    <div class="card-container">
+      <h1 class="clard-title">¿Quieres ser mi San Valentín?</h1>
+      <div class="buttons-container">
+        <button id="yes-button" class="option-button">Si</button>
+        <button id="no-button" class="option-button">No</button>
+      </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal-1" class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">¡Ups!</h2>
+        <p class="modal-text">
+          Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde.
+        </p>
+        <button
+          id="close-button-1"
+          class="option-button close-button"
+          onclick="closeModals(1, 5)"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal-2" class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">¡Alto!</h2>
+        <p class="modal-text">
+          El servidor continua con fallas, por favor, inténtalo de nuevo más
+          tarde.
+        </p>
+        <button
+          id="close-button-2"
+          class="option-button close-button"
+          onclick="closeModals(2, 5)"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal-3" class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">¡Detente!</h2>
+        <p class="modal-text">Hemos registrado una respuesta incorrecta.</p>
+        <button
+          id="close-button-3"
+          class="option-button close-button"
+          onclick="closeModals(3, 5)"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal-4" class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">¡Esta opción no!</h2>
+        <p class="modal-text">No me dejas alternativa...</p>
+        <button
+          id="close-button-4"
+          class="option-button close-button"
+          onclick="closeModals(4, 5)"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal-5" class="modal-background">
+      <div class="modal-container">
+        <h2 class="modal-title">🤬😡🤬😡🤬</h2>
+        <p class="modal-text">$&@#*!%⊗¶∑∗Δℓ≠∞¤⊂⊆⟆÷≈¿¡⊕⚡♫✂</p>
+        <button
+          id="close-button-5"
+          class="option-button close-button"
+          onclick="closeModals(5, 5)"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+    <div class="success">
+      <div class="images-container">
+        <img class="tickets left" src="assets/1.png" alt="" />
+        <img class="tickets right" src="assets/2.png" alt="" />
+      </div>
+      <div class="text">
+        <h1 class="title">¿Dijiste que si?</h1>
+        <h1 class="subtitle">Nunca me lo hubiera imaginado...</h1>
+        <p>Conoceras los detalles por privado...</p>
+        <div class="dedicatoria">
+          <p>Con amor y cariño, tu Valentín. ❤️</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap");
+:root {
+  --rosa-pastel: #ffdce8;
+  --rosa-chicle: #ffc4d6;
+  --rosa-coral: #ffaec0;
+  --durazno-pastel: #ffd3a5;
+  --celeste-pastel: #a5e6ff;
+  --celeste-pastel-dark: #55ccfb;
+  --lavanda-claro: #d4a5ff;
+  --shadow-pink: #f70d9d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Darumadrop One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  text-shadow: 0 0 10px var(--shadow-pink);
+}
+
+body {
+  background-image: url(/assets/wallpaper.webp);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 85vw;
+  max-width: 375px;
+  background-color: var(--rosa-chicle);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  gap: 20px;
+}
+
+.card-container h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.option-button {
+  background-color: var(--rosa-coral);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  width: 100px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.option-button:hover {
+  background-color: var(--shadow-pink);
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-size: 1.2rem;
+  display: none;
+  padding: 40px;
+}
+
+.modal-container {
+  background-color: white;
+  padding: 15px 40px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: var(--durazno-pastel);
+  text-shadow: none;
+}
+
+.modal-text {
+  font-size: 1.1rem;
+  color: var(--celeste-pastel);
+  text-shadow: none;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  background-color: var(--shadow-pink);
+  font-size: 1rem;
+}
+
+.envelope {
+  width: 50vw;
+  height: 20vh;
+  background-color: var(--lavanda-claro);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  min-width: 300px;
+  min-height: 190px;
+}
+
+.flap {
+  width: 100%;
+  height: 65%;
+  background-color: var(--celeste-pastel);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.open {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  margin-top: -120px;
+}
+
+.under {
+  background-color: var(--celeste-pastel-dark);
+  display: none;
+}
+
+.images-container {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  gap: 15vw;
+  margin-top: -150px;
+}
+
+.tickets {
+  height: 50vh;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  max-height: 300px;
+}
+
+.tickets.left {
+  transform: translateX(-300px) rotate(1000deg);
+  z-index: 1;
+}
+
+.tickets.right {
+  transform: translateX(300px) rotate(-1000deg);
+  z-index: 0;
+}
+
+.images-container .tickets.show {
+  opacity: 1;
+  transform: scale(1) rotate(-30deg);
+}
+
+.images-container .tickets.right.show {
+  transform: scale(1) rotate(30deg);
+}
+
+.success {
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.success .title {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 35px;
+}
+.success .subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 35px;
+}
+
+.success p {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.dedicatoria {
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-top: -200px;
+}
